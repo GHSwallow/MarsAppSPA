@@ -6,7 +6,7 @@ import Component1Bad from './nestedComponentsBad.jsx'
 import Component1Good from "./nestedComponentsGood.jsx";
 import TitleTextAndImg from "./TitleTextImg.jsx"
 
-function App() {
+export function App() {
   const [counter, setCount] = useState(Number(localStorage.getItem("count")))
 
     useEffect(() => {
