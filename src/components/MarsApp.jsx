@@ -1,6 +1,13 @@
-import SelectRover from "./SelectRover.jsx";
+import {MarsPATHS} from "../routes/paths.jsx";
+import GeneralButton from "./GeneralButton.jsx";
+import {Outlet} from "react-router-dom";
 
-export default function MarsRoot() {
+export default function MarsApp() {
+    const buttonInfo = {
+        link: MarsPATHS.SelectPhotos,
+        buttonMessage: 'click here',
+    }
+    console.log(buttonInfo)
 
     return (
         <>
@@ -8,7 +15,11 @@ export default function MarsRoot() {
                 Welcome! this is a website to interact with Mars rover data. Please select the rover and camera to display photos
                 Click to explore
             </p>
-            <SelectRover/>
+            <GeneralButton info={{
+                link: MarsPATHS.SelectPhotos,
+                buttonMessage: 'click here',
+            }}/>
+            <Outlet/>
         </>
     )
 }
