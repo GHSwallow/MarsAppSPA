@@ -1,10 +1,13 @@
-import { useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {getRoverNames} from "../services/APIRequests.jsx";
-import {readyArrayForReactSelect} from "../../Helpers/populateListHelper.jsx";
+import {mapArrayToSelectOptions} from "../../Helpers/populateListHelper.jsx";
 import Select from "react-select";
+import {Outlet} from "react-router-dom";
+import {RoverContext} from "../routes/SelectPhotos.jsx";
 
 export default function SelectRover() {
     const [rovers, setRovers] = useState()
+    let { rover, updateRover } = useContext(RoverContext);
 
     useEffect( () => {
         getRoverNames()
@@ -22,20 +25,22 @@ export default function SelectRover() {
                 Rover info:
             </h4>
             <p>
-                {(!rovers) ? ('loading...') : (rovers)}
+                {(!rovers) ? ('loading...') : ('')}
             </p>
             <Select
                 className="basic-single"
                 classNamePrefix="select"
-                defaultValue={!rovers ? [] : readyArrayForReactSelect(rovers)[0]}
+                defaultValue={!rovers ? [] : mapArrayToSelectOptions(rovers)[0]}
                 isDisabled={false}
                 isLoading={false}
                 isClearable={false}
                 isRtl={false}
                 isSearchable={false}
                 name="color"
-                options={!rovers ? [] : readyArrayForReactSelect(rovers)}
+                options={!rovers ? [] : mapArrayToSelectOptions(rovers)}
+                onChange={(choice) => {updateRover(choice)}}
             />
+            <Outlet/>
         </>
     )
 }
