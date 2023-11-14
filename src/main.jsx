@@ -6,26 +6,28 @@ import Root from "./routes/root.jsx";
 import ErrorPage from "./error-page.jsx";
 import { SubPage, RootSubpage } from "./routes/subpage.jsx";
 import MarsApp from "./MarsApp.jsx";
-import {PATHS} from "./routes/paths.jsx";
+import {MarsPATHS, PATHS} from "./routes/paths.jsx";
+import SelectRover from "./SelectRover.jsx";
 createRoutesFromElements()
-const router = createBrowserRouter(
-        createRoutesFromElements(
+const routerTest = createBrowserRouter(
+        createRoutesFromElements([
             <Route path={PATHS.root} element={<Root/>} errorElement={ErrorPage}>
                 <Route path={PATHS.subpage1} element={<RootSubpage/>}/>
-                <Route path={PATHS.subpage2} element={<SubPage/>}/>
-            </Route>
+            </Route>,
+            <Route path={PATHS.subpage2} element={<SubPage/>}/>
+            ]
         ))
 
 const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <MarsApp/>,
-      errorElement: <ErrorPage/>,
-    },
+    createRoutesFromElements(
+        <Route path={MarsPATHS.root} element={<MarsRoot/>} errorElement={ErrorPage}>
+            <Route path={MarsPATHS.SelectPhotos} element={<SelectPhotots/>}/>
+        </Route>,
+        )
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={routerTest} />
   </React.StrictMode>,
 )

@@ -3,3 +3,8 @@ export const PATHS = {
     subpage1: '/here',
     subpage2: '/subpage'
 }
+
+export const MarsPATHS = {
+    root: '/',
+    SelectPhotos: '/photos',
+}
