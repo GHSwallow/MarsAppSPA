@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react";
-import {getRoverNames} from "./services/APIRequests.jsx";
-import {readyArrayForReactSelect} from "../Helpers/populateListHelper.jsx";
+import {getRoverNames} from "../services/APIRequests.jsx";
+import {readyArrayForReactSelect} from "../../Helpers/populateListHelper.jsx";
 import Select from "react-select";
 
 export default function SelectRover() {
