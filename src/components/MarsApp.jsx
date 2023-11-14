@@ -1,10 +1,13 @@
 import SelectRover from "./SelectRover.jsx";
 
-export default function MarsApp() {
-    console.log("MarsApp fn run")
+export default function MarsRoot() {
+
     return (
         <>
-            getting rover data
+            <p>
+                Welcome! this is a website to interact with Mars rover data. Please select the rover and camera to display photos
+                Click to explore
+            </p>
             <SelectRover/>
         </>
     )
