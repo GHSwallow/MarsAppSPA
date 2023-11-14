@@ -1,10 +1,4 @@
-export function populateHTMLList(array) {
-    return array.map((arrayElement) =>
-        <li key={arrayElement.toString()}> {arrayElement.toString()}</li>
-    )
-}
-
-export function readyArrayForReactSelect(array) {
+export function mapArrayToSelectOptions(array) {
     const newArray = [];
     array.forEach((arrayElement) => {
         newArray.push({

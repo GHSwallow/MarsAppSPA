@@ -1,6 +1,6 @@
-import TitleTextAndImg from "../TitleTextImg.jsx";
+import TitleTextAndImg from "../components/TitleTextImg.jsx";
 import {Link} from "react-router-dom";
-import HomeButton from "../HomeButton.jsx";
+import HomeButton from "../components/HomeButton.jsx";
 
 export function SubPage() {
     return (
