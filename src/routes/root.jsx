@@ -1,23 +1,22 @@
-import { App } from "../App.jsx"
 import {Outlet, Link} from "react-router-dom";
+import {PATHS} from "./paths.jsx";
 
 export default function Root() {
      return (
          <>
-            <li>
-                <Link to={'/subpage'}>
+            <div>
+                <Link to={PATHS.subpage1}>
                     click here to access a subpage
                 </Link>
-            </li>
-             <li>
-                 <Link to={'/here'}>
+            </div>
+             <div>
+                 <Link to={PATHS.subpage2}>
                      click here to access a subpage ebmedded in the root page
                  </Link>
-             </li>
+             </div>
              <div id="detail">
                  <Outlet/>
              </div>
-             {/*<App/>*/}
          </>
      )
 }
