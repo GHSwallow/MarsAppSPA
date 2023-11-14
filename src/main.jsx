@@ -5,6 +5,7 @@ import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} fr
 import Root from "./routes/root.jsx";
 import ErrorPage from "./error-page.jsx";
 import { SubPage, RootSubpage } from "./routes/subpage.jsx";
+import MarsApp from "./MarsApp.jsx";
 import {PATHS} from "./routes/paths.jsx";
 createRoutesFromElements()
 const router = createBrowserRouter(
@@ -15,9 +16,16 @@ const router = createBrowserRouter(
             </Route>
         ))
 
+const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <MarsApp/>,
+      errorElement: <ErrorPage/>,
+    },
+])
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <RouterProvider router={router} />
-      {/*<App />*/}
   </React.StrictMode>,
 )
