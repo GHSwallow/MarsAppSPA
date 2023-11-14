@@ -7,7 +7,7 @@ import {CameraContext, RoverContext} from "../routes/SelectPhotos.jsx";
 export default function SelectCamera() {
     const [cameras, setCameras] = useState()
     const { rover } = useContext(RoverContext);
-    const { camera, updateCamera } = useContext(CameraContext);
+    const { updateCamera } = useContext(CameraContext);
 
     useEffect( () => {
         if (rover) {
