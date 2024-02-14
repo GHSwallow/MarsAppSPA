@@ -1,14 +1,14 @@
 import {Link} from "react-router-dom";
 
-export default function GeneralButton({info}) {
-    console.log(info.link)
+export default function GeneralButton({className, link, buttonMessage}) {
+    console.log(link)
     return (
-        <>
-            <Link to={info.link}>
-                <button>
-                    {info.buttonMessage}
+        <div>
+            <Link to={link}>
+                <button className={className}>
+                    {buttonMessage}
                 </button>
             </Link>
-        </>
+        </div>
     )
 }

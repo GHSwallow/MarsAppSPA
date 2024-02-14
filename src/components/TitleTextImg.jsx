@@ -13,3 +13,4 @@ export default function TitleTextAndImg({title, text, img_source}) {
         </div>
     )
 }
+

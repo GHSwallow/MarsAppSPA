@@ -1,0 +1,15 @@
+.homeScreen
+{
+    background-color: grey;
+}
+.largeText
+{
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.largeText button {
+    margin: 5px;
+}

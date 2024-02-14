@@ -27,6 +27,8 @@ const marsRouter = createBrowserRouter(
         // <Route path={'/'} element={<SelectRover/>} errorElement={<ErrorPage/>}/>
         ]))
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <RouterProvider router={marsRouter} />
